@@ -1,0 +1,1 @@
+This directory contain scripts that allow input and output redirection and filters. 
