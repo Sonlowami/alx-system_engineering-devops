@@ -1,2 +1,2 @@
 #!/bin/bash
-find -name "*.js" > js_files < rm
+rm $(find . -name "*js")
