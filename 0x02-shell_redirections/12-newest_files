@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | sort -M|head 10
+ls -t|head 
