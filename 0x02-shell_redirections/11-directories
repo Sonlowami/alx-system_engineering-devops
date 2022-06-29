@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -da |wc -l
+find . -type d|wc -l
+
