@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+for (( i =  0; i < 1; i++ ));
+do
+	find . -type f -name "*" | cut -f 2 -d "-";
+done
