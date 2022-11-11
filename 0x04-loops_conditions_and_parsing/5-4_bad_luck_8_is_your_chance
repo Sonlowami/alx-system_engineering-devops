@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#use if - elif in conditional commanding
 i=1
 while [ $i -lt 11 ];
 do

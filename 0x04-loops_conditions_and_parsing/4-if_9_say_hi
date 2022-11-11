@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Use if in a while loop
 i=0
 while [ $i -lt 10 ];
 do

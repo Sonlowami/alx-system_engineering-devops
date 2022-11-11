@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Use nested while loops in repetitive commanding
 i=0
 while [ $i -le 12 ];
 do

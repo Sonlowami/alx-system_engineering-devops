@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Use for to iterate through a list of commands
 for (( i =  0; i < 1; i++ ));
 do
 	find . -type f -name "*" | cut -f 2 -d "-";

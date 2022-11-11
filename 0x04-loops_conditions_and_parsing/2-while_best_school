@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#use a while loop to execute commands
 i=0
 while [ $i -lt 10 ];
 do
