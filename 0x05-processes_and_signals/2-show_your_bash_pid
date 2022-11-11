@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# Show process information for files containing the word bash
 ps -C bash -F
 # shellcheck disable=SC2009

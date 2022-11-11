@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+#Kill an infinite loop using pkill
 pkill -f 4-to_infinity_and_beyond
