@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #Display the command and pid of all bash processes
-ps -C bash -o pid,command
+pgrep -l bash
