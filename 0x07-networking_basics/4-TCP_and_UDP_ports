@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Print listening TCP and UDP ports with their PIDs
+netstat -nlp
