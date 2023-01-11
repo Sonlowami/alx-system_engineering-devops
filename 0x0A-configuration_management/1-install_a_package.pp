@@ -1,6 +1,6 @@
 # Install Flask on the computer
 
 package { 'flask':
-  ensure   => 'installed',
+  ensure   => '2.1.0',
   provider => pip,
 }
