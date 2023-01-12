@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Create an SSH Client configuration
 Host alx
   Hostname 54.90.2.130
