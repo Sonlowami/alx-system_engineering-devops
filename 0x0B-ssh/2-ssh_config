@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+# Create an SSH Client configuration
+Host alx
+  Hostname 54.90.2.130
+  User ubuntu
+  IdentityFile "~/.ssh/school"
+  PasswordAuthentication no
