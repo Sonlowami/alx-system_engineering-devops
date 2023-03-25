@@ -3,11 +3,11 @@
 file-line {'Declaring identity file':
   path => '/etc/ssh/ssh_config',
   ensure => present,
-  line => '\tIdentityFile ~/.ssh/school',
+  line => '    IdentityFile ~/.ssh/school',
 }
 
 file-line {'Deactivating Password authentication':
   path =>'/etc/ssh/ssh_config',
   ensure => present,
-  line => '\tPasswordAuthentication no',
+  line => '    PasswordAuthentication no',
 }
