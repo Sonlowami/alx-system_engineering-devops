@@ -1,0 +1,6 @@
+# This is an SSH config file to connect to a host by refusing
+#password and using identity in ~/.ssh/school
+
+Host *
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
