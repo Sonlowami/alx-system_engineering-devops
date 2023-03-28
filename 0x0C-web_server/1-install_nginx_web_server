@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script installs nginx on the computer it's run on.
+#  It prints 'Hello world' when curled
+apt-get update
+apt-get -y install nginx
+rm /var/www/html/index.nginx-debian.html && echo 'Hello World!' > /var/www/html/index.nginx-debian.html

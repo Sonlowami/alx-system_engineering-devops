@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script installs nginx on the computer it's run on.
+#  It prints 'Hello world' when curled
+# It also redirects query to /redirect_me to YouTube
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo rm /var/www/html/index.nginx-debian.html && echo 'Hello World!' > /var/www/html/index.nginx-debian.html
+
+sudo sed -i '/^\tserver_name _.*/a \\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+sudo sed -i '/^http.*/a \\terror_page 404 /error404.html;' /etc/nginx/nginx.conf
+sudo echo "Ceci n'est pas une page" > /var/www/html/error404.html
+sudo systemctl restart nginx
