@@ -3,10 +3,14 @@
 # File_path, server IP, username and identity file passed
 #  on the commandline
 
-if [ !$4 ]
+if [ $# -lt 3 ]
 then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
-	sed -i 's/StrictHostKeyChecking\s[a,y,n][s,e,o][k,s]/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
-	scp $1 scp://$3@$2/~/ -i $4
+	if [ $4 ]
+	then
+		scp $-o StrictHostKeyChecking=no -i $4 $1 scp://$3@$2/~/
+	else
+		scp -o StrictHostKeyChecking=no $1 scp://$3@$2/~/
+	fi
 fi
