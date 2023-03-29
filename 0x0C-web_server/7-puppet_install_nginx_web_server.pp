@@ -31,6 +31,6 @@ service {'restart nginx':
 }
 
 exec {'restart':
-  command  => 'sudo systemctl restart nginx',
+  command  => 'sudo service nginx restart',
   provider => shell,
 }
