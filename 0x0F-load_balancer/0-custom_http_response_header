@@ -15,5 +15,8 @@ ufw allow 80/http
 host=$(hostname)
 sed -i "/^http.*/a \\\tadd_header X-Served-By $host;" /etc/nginx/nginx.conf
 
+#step 5: Configure nginx to print 'Hello World at index'
+echo 'Hello World!' | tee /var/www/html/index.nginx-debian.html
+
 #step 5: restart nginx server
 service nginx restart
