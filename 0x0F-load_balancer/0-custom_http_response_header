@@ -16,7 +16,14 @@ host=$(hostname)
 sed -i "/^http.*/a \\\tadd_header X-Served-By $host;" /etc/nginx/nginx.conf
 
 #step 5: Configure nginx to print 'Hello World at index'
-echo 'Hello World!' | tee /var/www/html/index.nginx-debian.html
+echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 
-#step 5: restart nginx server
+#step 6: Configure nginx for a redirect at redirect_me
+sed -i '/^\tserver_name _.*/a \\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+#step 7: configure nginx to use a custom 404 error message
+sed -i '/^http.*/a \\terror_page 404 /error404.html;' /etc/nginx/nginx.conf
+echo "Ceci n'est pas une page" > /var/www/html/error404.html
+
+#step 8: restart nginx server
 service nginx restart
