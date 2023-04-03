@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script installs and configures haproxy on a brand new
+#	ubuntu machine. This is run by or as root user.
+#
+#Step 1: Update the apt package list
+apt-get update
+apt upgrade -y
+
+#Step 2: Install haproxy
+apt-get install haproxy -y
+
+# Allow the init process to start haproxy when it is run
+echo "ENABLED=1" >> /etc/default/haproxy
+
+#step 3: create a configuration file in the user's home directory
+mkdir -p ~/.haproxy && cd ~/.haproxy ||exit
+printf "frontend http\n\tbind *:80\n\ttimeout client 10s\n\tmode http\n\tdefault_backend all_servers\n" > haproxy.cfg
+printf "backend all_servers\n\tmode http\n\ttimeout connect 1s\n\ttimeout server 30s\n\tserver web-01 54.87.205.95:80 check\n\tserver web-02 54.237.226.36:80 check\n" >> haproxy.cfg
+
+#step 5: Restart haproxy with this configuration file
+haproxy -f haproxy.cfg
+
+#step 6: Return to the previous working directory
+cd "$OLD_PWD" ||exit
