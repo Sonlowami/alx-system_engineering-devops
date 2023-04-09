@@ -19,6 +19,7 @@ printf "backend all_servers\n\tmode http\n\ttimeout connect 1s\n\ttimeout server
 
 #step 5: Restart haproxy with this configuration file
 haproxy -f haproxy.cfg
+service haproxy restart
 
 #step 6: Return to the previous working directory
 cd "$OLD_PWD" ||exit
