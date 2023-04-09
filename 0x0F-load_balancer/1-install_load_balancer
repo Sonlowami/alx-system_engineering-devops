@@ -13,13 +13,9 @@ apt-get install haproxy -y
 echo "ENABLED=1" >> /etc/default/haproxy
 
 #step 3: create a configuration file in the user's home directory
-mkdir -p ~/.haproxy && cd ~/.haproxy ||exit
-printf "frontend http\n\tbind *:80\n\ttimeout client 10s\n\tmode http\n\tdefault_backend all_servers\n" > haproxy.cfg
-printf "backend all_servers\n\tmode http\n\ttimeout connect 1s\n\ttimeout server 30s\n\tserver web-01 54.87.205.95:80 check\n\tserver web-02 54.237.226.36:80 check\n" >> haproxy.cfg
+printf "frontend http\n\tbind *:80\n\ttimeout client 10s\n\tmode http\n\tdefault_backend all_servers\n" >> /etc/haproxy/haproxy.cfg
+printf "backend all_servers\n\tmode http\n\ttimeout connect 1s\n\ttimeout server 30s\n\tserver web-01 54.87.205.95:80 check\n\tserver web-02 54.237.226.36:80 check\n" >> /etc/haproxy/haproxy.cfg
 
 #step 5: Restart haproxy with this configuration file
-haproxy -f haproxy.cfg
+haproxy -f /etc/haproxy/haproxy.cfg
 service haproxy restart
-
-#step 6: Return to the previous working directory
-cd "$OLD_PWD" ||exit
