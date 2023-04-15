@@ -16,7 +16,7 @@ query_dns () {
 	elif [ "$2" ]
 	then
 		res=$(dig "$2"."$1" +noall +answer|awk '{print $4, $NF}')
-		list_res=("$res")
+		list_res=($res)
 		echo "The subdomain $2 is a ${list_res[-2]} record and points to ${list_res[-1]}"
 	fi
 	return 0
