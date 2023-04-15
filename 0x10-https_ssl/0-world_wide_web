@@ -10,7 +10,7 @@ query_dns () {
 		for item in "${subdoms[@]}";
 		do
 		    res=$(dig "$item"."$1" +noall +answer|awk '{print $4, $NF}')
-		    echo($res)
+		    echo "($res)"
 		    list_res=($res)
 		    echo "The subdomain $item is a ${list_res[0]} record and points to ${list_res[1]}"
 		done
