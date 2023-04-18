@@ -2,5 +2,5 @@
 # This script takes one argument and run the command as user given as argument
 if [ "$1" ]
 then
-	su "$1" -c whoami
+	sudo -u "$1" whoami
 fi
