@@ -4,5 +4,5 @@ if [ "$1" ]
 then
 	mysqldump -uroot -p"$1" --all-databases > backup.sql
 	day=$(date | awk 'OFS="-"{print $2,$3,$4}')
-	tar -cvzf "$day".tar.gz backup.sql
+	tar -cvzf "$day.tar.gz" backup.sql
 fi
