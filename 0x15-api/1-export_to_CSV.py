@@ -12,7 +12,7 @@ if __name__ == '__main__':
         # We first get the name of the user
         r = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                          .format(argv[1]))
-        name = r.json()['name']
+        name = r.json()['username']
 
         # Then, we get data about the todos of this user
         r = requests.get('https://jsonplaceholder.typicode.com/users/{}/todos/'
