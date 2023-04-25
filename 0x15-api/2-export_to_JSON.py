@@ -2,9 +2,9 @@
 """
 This module contain a script to fetch data from an API
 """
+import json
 import requests
 from sys import argv
-import json
 
 
 if __name__ == '__main__':

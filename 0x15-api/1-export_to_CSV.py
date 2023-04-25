@@ -2,8 +2,8 @@
 """
 This module contain a script to fetch data from an API
 """
-import requests
 import csv
+import requests
 from sys import argv
 
 

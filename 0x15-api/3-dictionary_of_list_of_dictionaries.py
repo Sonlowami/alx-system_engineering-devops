@@ -2,8 +2,8 @@
 """
 This module contain a script to fetch data from an API
 """
-import requests
 import json
+import requests
 
 
 if __name__ == '__main__':
