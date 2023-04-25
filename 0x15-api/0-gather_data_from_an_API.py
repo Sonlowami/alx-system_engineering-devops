@@ -27,7 +27,7 @@ if __name__ == '__main__':
         print('Employee {} is done with tasks({}/{}):'
               .format(name, completed, total))
         for task in done_tasks:
-            print('\t{}'.format(task))
+            print('\t {}'.format(task))
 
     except IndexError:
         pass
