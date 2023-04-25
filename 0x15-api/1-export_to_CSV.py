@@ -21,7 +21,8 @@ if __name__ == '__main__':
         with open('{}.csv'.format(argv[1]), 'w', newline='') as f:
             writer = csv.writer(f)
             for obj in r_json:
-                writer.writerow([argv[1], name, obj['completed'], obj['title']]
+                uid = obj['userId']
+                writer.writerow([uid, name, obj['completed'], obj['title']]
                                 )
 
     except IndexError:
