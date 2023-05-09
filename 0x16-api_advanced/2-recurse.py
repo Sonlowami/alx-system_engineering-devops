@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Contain a function that prints all hot titles in a subreddit"""
 
-import requests
 import json
+import requests
 
 
 def recurse(subreddit, hot_list=[], counter=0, after=''):
