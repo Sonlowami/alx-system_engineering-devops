@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Contain a function that prints all hot titles in a subreddit"""
 
-import json
 import requests
 
 
@@ -19,6 +18,6 @@ def recurse(subreddit, hot_list=[], counter=0, after=''):
         if after is None:
             raise AttributeError
         [hot_list.append(post['data']['title']) for post in posts]
-    except (KeyError, AttributeError, json.JSONDecodeError):
+    except (KeyError, AttributeError):
         return None if len(hot_list) == 0 else hot_list
     return recurse(subreddit, hot_list, counter, after)
