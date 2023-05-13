@@ -1,5 +1,7 @@
 # POSTMORTEM
 
+![it is not latency, it is latency](https://www.memecreator.org/static/images/memes/5430562.jpg)
+
 This is a incident report for an imaginary latency issues due to a surge in demand on a social media platform.
 
 ## Issue
